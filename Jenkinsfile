@@ -2,11 +2,11 @@ node {
    stage('init') {
       checkout scm
    }
+   // mvn -version
+   // mvn clean package
    stage('build') {
       sh '''
          cd complete
-         // mvn -version
-         // mvn clean package
          cp src/main/resources/web.config web.config
          cp todo-app-java-on-azure-1.0-SNAPSHOT.jar app.jar 
          zip todo.zip app.jar web.config
