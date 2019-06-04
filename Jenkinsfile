@@ -4,8 +4,9 @@ node {
    }
    stage('build') {
       sh '''
+         cd complete
          mvn clean package
-         cd complete/target
+         cd target
          cp ../web.config web.config
          cp gs-spring-boot-0.1.0.jar app.jar
          zip todo.zip app.jar web.config
