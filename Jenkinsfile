@@ -4,6 +4,7 @@ node {
    }
    stage('build') {
       sh '''
+         mvn -version
          mvn clean package
          cd target
          cp ../src/main/resources/web.config web.config
