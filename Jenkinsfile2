@@ -8,17 +8,25 @@ def myprint() {
 pipeline {
   agent any
   stages {
-    stage("build") {
+    stage('build') {
       steps {
         script { myprint() }
       }
     }
-    stage("condition") {
+    stage('is master') {
       when {
-        myvar 'ACCOUNT_ID'
+        branch 'master'
       }
       steps {
-        println 'condition is true'
+        println 'is master'
+      }
+    }
+    stage('is develop') {
+      when {
+        branch 'develop'
+      }
+      steps {
+        println 'is develop'
       }
     }
   }
