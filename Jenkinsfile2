@@ -1,10 +1,15 @@
-def myvar = "ACCOUNT_ID"
+@Field def myvar = "ACCOUNT_ID"
+
+def myprint() {
+    sh "echo ${myvar}"
+}
+
 pipeline {
   agent any
   stages {
     stage("build") {
       steps {
-        sh "echo ${myvar}"
+        script { myprint() }
       }
     }
   }
