@@ -13,14 +13,9 @@ pipeline {
         script { myprint() }
       }
     }
-    stage("print") {
-      steps {
-        println triggeredBy
-      }
-    }
     stage("condition") {
       when {
-        branch 'master'
+        myvar 'ACCOUNT_ID'
       }
       steps {
         println 'condition is true'
@@ -33,6 +28,9 @@ pipeline {
     }
     aborted {
       println 'aborted'
+    }
+    failure {
+      println 'failure'
     }
   }
 }
