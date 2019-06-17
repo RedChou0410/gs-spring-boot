@@ -13,18 +13,18 @@ pipeline {
         script { myprint() }
       }
     }
-  }
-  stage("print") {
-    steps {
-      println triggeredBy
+    stage("print") {
+      steps {
+        println triggeredBy
+      }
     }
-  }
-  stage("condition") {
-    when {
-      branch: 'master'
-    }
-    steps {
-      println 'condition is true'
+    stage("condition") {
+      when {
+        branch: 'master'
+      }
+      steps {
+        println 'condition is true'
+      }
     }
   }
   post {
