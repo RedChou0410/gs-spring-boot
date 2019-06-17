@@ -14,6 +14,17 @@ pipeline {
       }
     }
   }
+  stage("print") {
+    println triggeredBy
+  }
+  stage("condition") {
+    when {
+      branch: 'master'
+    }
+    steps {
+      println 'condition is true'
+    }
+  }
   post {
     success {
       println 'success'
