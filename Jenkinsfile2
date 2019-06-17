@@ -1,5 +1,10 @@
-node {
-  stage('init') {
-    println 'init'
-  }
+def myvar = "ACCOUNT_ID"
+pipeline {
+    stages {
+        stage("build") {
+            steps {
+                sh "echo ${myvar}"
+            }
+        }
+    }
 }
