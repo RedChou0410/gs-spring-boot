@@ -18,7 +18,7 @@ pipeline {
         branch 'master'
       }
       steps {
-        println 'is master'
+        println 'is master.'
       }
     }
     stage('is develop') {
@@ -26,7 +26,7 @@ pipeline {
         branch 'develop'
       }
       steps {
-        println 'is develop'
+        println 'is develop.'
       }
     }
   }
