@@ -15,7 +15,9 @@ pipeline {
     }
   }
   stage("print") {
-    println triggeredBy
+    steps {
+      println triggeredBy
+    }
   }
   stage("condition") {
     when {
