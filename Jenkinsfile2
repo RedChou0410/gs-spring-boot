@@ -14,4 +14,12 @@ pipeline {
       }
     }
   }
+  post {
+    success {
+      println 'success'
+    }
+    aborted {
+      println 'aborted'
+    }
+  }
 }
