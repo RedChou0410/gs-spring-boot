@@ -1,3 +1,15 @@
+def myvar = "ACCOUNT_ID"
+pipeline {
+    stages {
+        stage("build") {
+            steps {
+                sh "echo ${myvar}"
+            }
+        }
+    }
+}
+
+/*
 node {
    stage('init') {
       checkout scm
@@ -17,3 +29,4 @@ node {
       resourceGroup: env.RES_GROUP, appName: env.WEB_APP, filePath: "**/todo.zip"
    }
 }
+*/
