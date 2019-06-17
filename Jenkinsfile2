@@ -20,7 +20,7 @@ pipeline {
     }
     stage("condition") {
       when {
-        branch: 'master'
+        branch 'master'
       }
       steps {
         println 'condition is true'
