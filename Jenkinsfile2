@@ -1,10 +1,11 @@
 def myvar = "ACCOUNT_ID"
 pipeline {
-    stages {
-        stage("build") {
-            steps {
-                sh "echo ${myvar}"
-            }
-        }
+  agent any
+  stages {
+    stage("build") {
+      steps {
+        sh "echo ${myvar}"
+      }
     }
+  }
 }
